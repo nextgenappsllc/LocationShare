@@ -6,6 +6,7 @@ export class LocationDisplay extends React.Component {
 
   render() {
     const {latitude, longitude, heading} = this.props.coordinate;
+    const compass = this.props.compass;
     const coordinate = {latitude, longitude};
     const region = {
       latitudeDelta: 0.0922,
@@ -14,7 +15,7 @@ export class LocationDisplay extends React.Component {
     }; 
     const mapStyle = {width: '100%', height: '100%'};
     const markerStyle = {
-      transform: [{ rotate: `${heading}deg` }]
+      transform: [{ rotate: `${compass}deg` }]
     };
 
     return (
