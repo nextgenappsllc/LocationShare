@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
-import { LocationDisplay } from './components/LocationDisplay';
+import { LocationDisplay } from '../components/LocationDisplay';
 import RNSimpleCompass from 'react-native-simple-compass';
 
 export class LocalLocationScene extends React.Component {
@@ -51,7 +51,7 @@ export class LocalLocationScene extends React.Component {
   }
 
   monitorLocation() {
-    RNSimpleCompass.start(3, (degree) => {
+    RNSimpleCompass.start(5, (degree) => {
       let data = {compass: degree};
       this.sendUpdatedLocation(Object.assign({}, this.attributesFromState(), data));
       this.setState(data);

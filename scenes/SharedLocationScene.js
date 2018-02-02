@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
-import { LocationDisplay } from './components/LocationDisplay';
+import { LocationDisplay } from '../components/LocationDisplay';
 
 export class SharedLocationScene extends React.Component {
 

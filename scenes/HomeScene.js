@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, FlatList } from 'react-native';
 import { List, ListItem } from "react-native-elements";
-import { LocalLocationScene } from './LocalLocationScene';
 
 export class HomeScene extends React.Component {
 
@@ -98,7 +97,9 @@ export class HomeScene extends React.Component {
   }
 
   shareLocation() {
-    this.props.navigation.navigate('LocalLocation', {baseURL: this.baseURL});
+    this.props.navigation.navigate('LocalLocation', {
+      baseURL: this.baseURL
+    });
     // navigator.geolocation.requestAuthorization().then(() => {navigate('LocalLocation')});
     // if (navigator.geolocation.requestAuthorization()) {
     //   navigate('LocalLocation');
@@ -106,7 +107,10 @@ export class HomeScene extends React.Component {
   }
 
   viewSharedLocation(id) {
-    this.props.navigation.navigate('SharedLocation', {baseURL: this.baseURL, id: id});
+    this.props.navigation.navigate('SharedLocation', {
+      baseURL: this.baseURL, 
+      id: id
+    });
   }
 
 
@@ -115,13 +119,14 @@ export class HomeScene extends React.Component {
 
     return (
       <View>
-        <Button title="Click to share location" onPress={this.shareLocation} />
+        <Button 
+          title="Click to share location" 
+          onPress={this.shareLocation} />
         <List>
           <FlatList
             data={sharedLocations}
             keyExtractor={item => item.id}
-            renderItem={this.listItemForSharedLocation}
-          />
+            renderItem={this.listItemForSharedLocation} />
         </List>
       </View>
     );

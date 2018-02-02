@@ -1,9 +1,10 @@
 import { StackNavigator } from 'react-navigation';
-import { HomeScene } from './HomeScene';
-import { LocalLocationScene } from './LocalLocationScene';
-import { SharedLocationScene } from './SharedLocationScene';
+import { HomeScene } from './scenes/HomeScene';
+import { LocalLocationScene } from './scenes/LocalLocationScene';
+import { SharedLocationScene } from './scenes/SharedLocationScene';
 
-const baseURL = '192.168.2.110:3000/';
+// Change this to the IP address of your local machine
+const baseURL = '192.168.100.4:3000/'; 
 
 const App = StackNavigator({
   Home: { 
